@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        body: ['var(--font-inter)'],
+        title: ['var(--font-bungee)'],
+      },
     },
   },
   plugins: [],
