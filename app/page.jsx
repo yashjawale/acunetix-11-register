@@ -56,7 +56,7 @@ const eventLinks = [
 
 export default function Home() {
   return (
-    <main className="container max-w-4xl mx-auto py-16 px-8 flex flex-col items-center gap-8">
+    <main className="container max-w-4xl mx-auto py-16 px-6 flex flex-col items-center gap-8">
       <Image src={acunetixLogo} width={100} height={100} alt='Acunetix Logo' />
       <h1 className="font-title uppercase text-5xl tracking-normal text-neutral-200">
         Register
