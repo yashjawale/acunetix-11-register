@@ -54,7 +54,7 @@ const eventLinks = [
   },
 ]
 
-const STREAMLIT_ENABLE = false
+const STREAMLIT_ENABLE = true
 
 export default function Home() {
   if (STREAMLIT_ENABLE) {
