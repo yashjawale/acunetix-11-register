@@ -59,9 +59,7 @@ const STREAMLIT_ENABLE = true
 export default function Home() {
   if (STREAMLIT_ENABLE) {
     return (
-      <frameset>
-        <frame src="https://acunetix11.streamlit.app/?embed=True" />
-      </frameset>
+        <iframe style={{height: '100svh'}} width="100%" height="100%" src="https://acunetix11.streamlit.app/?embed=True"></iframe>
     )
   } else {
     return (
