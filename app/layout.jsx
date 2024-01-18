@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/assets/acunetix-logo.png" sizes="any" />
       </head>
       <body
-        className={`${inter.variable} ${bungee.variable}`}
+        className={`${inter.variable} ${bungee.variable} bg-[#070415]`}
       >
         {children}
       <Footer/>
