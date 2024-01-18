@@ -54,36 +54,51 @@ const eventLinks = [
   },
 ]
 
+const STREAMLIT_ENABLE = true
+
 export default function Home() {
-  return (
-    <main className="container max-w-4xl mx-auto py-16 px-6 flex flex-col items-center gap-8">
-      <Image src={acunetixLogo} width={100} height={100} alt='Acunetix Logo' />
-      <h1 className="font-title uppercase text-5xl tracking-normal text-neutral-200">
-        Register
-      </h1>
-      <div className="text-white text-2xl flex gap-6 pb-5 [&>*]:border-neutral-100 [&>*]:border-2 [&>*]:rounded-full [&>*]:p-2 [&>*]:transition-colors [&>*:hover]:text-pink-500 [&>*:hover]:border-pink-500">
-        <Link target="_blank" href="https://acunetix11.tech/">
-          <FaChrome />
-        </Link>
-        <Link target="_blank" href="https://instagram.com/acunetix.dit/">
-          <FaInstagram />
-        </Link>
-        <Link
-          target="_blank"
-          href="https://www.linkedin.com/company/acunetix-dit/"
-        >
-          <FaLinkedinIn />
-        </Link>
-      </div>
-      <div className="flex flex-col gap-8 w-full">
-        {eventLinks.map((event) => (
-          <LinkCard
-            key={event.formLink}
-            displayName={event.eventName}
-            formLink={event.formLink}
-          />
-        ))}
-      </div>
-    </main>
-  )
+  if (STREAMLIT_ENABLE) {
+    return (
+      <frameset>
+        <frame src="https://acunetix11.streamlit.app/?embed=True" />
+      </frameset>
+    )
+  } else {
+    return (
+      <main className="tracking-tighter bg-[#070415] text-neutral-100 container max-w-4xl mx-auto py-16 px-6 flex flex-col items-center gap-8">
+        <Image
+          src={acunetixLogo}
+          width={100}
+          height={100}
+          alt="Acunetix Logo"
+        />
+        <h1 className="font-title uppercase text-5xl tracking-normal text-neutral-200">
+          Register
+        </h1>
+        <div className="text-white text-2xl flex gap-6 pb-5 [&>*]:border-neutral-100 [&>*]:border-2 [&>*]:rounded-full [&>*]:p-2 [&>*]:transition-colors [&>*:hover]:text-pink-500 [&>*:hover]:border-pink-500">
+          <Link target="_blank" href="https://acunetix11.tech/">
+            <FaChrome />
+          </Link>
+          <Link target="_blank" href="https://instagram.com/acunetix.dit/">
+            <FaInstagram />
+          </Link>
+          <Link
+            target="_blank"
+            href="https://www.linkedin.com/company/acunetix-dit/"
+          >
+            <FaLinkedinIn />
+          </Link>
+        </div>
+        <div className="flex flex-col gap-8 w-full">
+          {eventLinks.map((event) => (
+            <LinkCard
+              key={event.formLink}
+              displayName={event.eventName}
+              formLink={event.formLink}
+            />
+          ))}
+        </div>
+      </main>
+    )
+  }
 }
