@@ -11,6 +11,12 @@ module.exports = {
         body: ['var(--font-inter)'],
         title: ['var(--font-bungee)'],
       },
+      colors: {
+        background: '#041221',
+        backgroundHighlight: '#072739',
+        accent: '#fe7800',
+        secondaryAccent: '#66a8d0'
+      },
     },
   },
   plugins: [],

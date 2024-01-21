@@ -1,6 +1,7 @@
 import { Inter, Bungee_Inline } from 'next/font/google'
 import './globals.css'
 import Footer from './components/Footer'
+import { STREAMLIT_ENABLE } from './settings'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,10 +27,12 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/assets/acunetix-logo.png" sizes="any" />
       </head>
       <body
-        className={`${inter.variable} ${bungee.variable} bg-[#070415]`}
+        className={`${inter.variable} ${bungee.variable} ${
+          !STREAMLIT_ENABLE && 'bg-background'
+        }`}
       >
         {children}
-      <Footer/>
+        <Footer />
       </body>
     </html>
   )

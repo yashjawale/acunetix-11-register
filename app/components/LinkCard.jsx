@@ -4,7 +4,7 @@ function LinkCard({ displayName, formLink }) {
   return (
     <Link
       target="_blank"
-      className="block p-4 tracking-normal shadow-pink-500 shadow-md text-2xl border-white border-2 rounded-xl transition-all hover:bg-slate-900 hover:border-pink-500 hover:scale-95"
+      className={`flex bg-backgroundHighlight items-center p-4 tracking-normal shadow-accent shadow-md text-lg border-neutral-100 border-2 rounded-xl transition-all hover:border-accent hover:scale-95 ${displayName === "Treasure Trove" && "col-span-2"}`}
       href={formLink}
     >
       {displayName}

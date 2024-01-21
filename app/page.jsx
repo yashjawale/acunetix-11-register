@@ -7,14 +7,12 @@ import acunetixLogo from './assets/acunetix-logo.png'
 
 import { FaInstagram, FaChrome, FaLinkedinIn } from 'react-icons/fa6'
 
+import { STREAMLIT_ENABLE } from './settings'
+
 const eventLinks = [
   {
     eventName: 'Gamestorm',
     formLink: 'https://forms.gle/7QYj6CgWqP44dwUFA',
-  },
-  {
-    eventName: 'Treasure Trove',
-    formLink: 'https://forms.gle/MPDAHifsTB1PNXRi9',
   },
   {
     eventName: 'Code of Lies',
@@ -52,28 +50,36 @@ const eventLinks = [
     eventName: 'InsightOPs',
     formLink: 'https://forms.gle/jHcXt1EbQaLt7ThX9',
   },
+  // {
+  //   eventName: 'Treasure Trove',
+  //   formLink: 'https://forms.gle/MPDAHifsTB1PNXRi9',
+  // },
 ]
-
-const STREAMLIT_ENABLE = false
 
 export default function Home() {
   if (STREAMLIT_ENABLE) {
     return (
-        <iframe style={{height: '100svh'}} width="100%" height="100%" src="https://acunetix11.streamlit.app/?embed=True"></iframe>
+      <iframe
+        style={{ height: '100svh' }}
+        width="100%"
+        height="100%"
+        src="https://acunetix11.streamlit.app/?embed=True"
+      ></iframe>
     )
   } else {
     return (
-      <main className="tracking-tighter bg-[#070415] text-neutral-100 container max-w-4xl mx-auto py-16 px-6 flex flex-col items-center gap-8">
+      <main className="tracking-tighter bg-background text-neutral-100 container max-w-4xl mx-auto py-16 px-6 flex flex-col items-center gap-6 relative">
         <Image
           src={acunetixLogo}
           width={100}
           height={100}
           alt="Acunetix Logo"
         />
+        {/* <p className='absolute text-center top-12 text-white text-opacity-10 font-black text-7xl md:text-8xl w-full z-0'>ACUNETIX 11.0</p> */}
         <h1 className="font-title uppercase text-5xl tracking-normal text-neutral-200">
           Register
         </h1>
-        <div className="text-white text-2xl flex gap-6 pb-5 [&>*]:border-neutral-100 [&>*]:border-2 [&>*]:rounded-full [&>*]:p-2 [&>*]:transition-colors [&>*:hover]:text-pink-500 [&>*:hover]:border-pink-500">
+        <div className="text-neutral-200 text-2xl flex gap-6 pb-5 [&>*]:border-neutral-200 [&>*]:border-2 [&>*]:rounded-full [&>*]:p-2 [&>*]:transition-colors [&>*:hover]:text-accent [&>*:hover]:border-accent">
           <Link target="_blank" href="https://acunetix11.tech/">
             <FaChrome />
           </Link>
@@ -87,7 +93,7 @@ export default function Home() {
             <FaLinkedinIn />
           </Link>
         </div>
-        <div className="flex flex-col gap-8 w-full">
+        <div className="grid grid-cols-2 gap-4 w-full">
           {eventLinks.map((event) => (
             <LinkCard
               key={event.formLink}
