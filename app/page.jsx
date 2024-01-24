@@ -50,10 +50,10 @@ const eventLinks = [
     eventName: 'InsightOPs',
     formLink: 'https://forms.gle/jHcXt1EbQaLt7ThX9',
   },
-  // {
-  //   eventName: 'Treasure Trove',
-  //   formLink: 'https://forms.gle/MPDAHifsTB1PNXRi9',
-  // },
+  {
+    eventName: 'Treasure Trove',
+    formLink: 'https://forms.gle/MPDAHifsTB1PNXRi9',
+  },
 ]
 
 export default function Home() {
